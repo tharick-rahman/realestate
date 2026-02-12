@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
+body {
+    margin: 0;
+    padding: 0;
+}
 
 :root {
     --primary: #0A1E2F;
@@ -120,8 +124,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Header */
 header {
     position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 1000;
     padding: 20px 0;
@@ -129,6 +131,14 @@ header {
     background: linear-gradient(135deg, var(--primary) 0%, #1A2F3F 100%);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
+header {
+    margin-bottom: 0;
+}
+
+section:first-child {
+    margin-top: 0;
+}
+
 
 header.scrolled {
     background: linear-gradient(135deg, var(--primary) 0%, #1A2F3F 100%);
@@ -155,8 +165,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: var(--transition);
-    min-width: 200px;
+ 
+    min-width: 300px;
     padding: 0 20px;
 }
 
@@ -242,6 +252,25 @@ header.scrolled .nav-links a {
 
 header.scrolled .mobile-menu-btn {
     color: var(--dark);
+}
+@media (max-width: 768px) {
+
+    .logo {
+        font-size: 2.8rem;   /* Bigger text */
+        min-width: auto;
+        padding: 0 10px;
+    }
+
+    .logo-icon {
+        width: 220px;   /* Increase logo image size */
+        height: auto;
+    }
+
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px 0;
+    }
 }
 
 /* Hero Section */
@@ -1435,7 +1464,7 @@ footer {
     }
     
     header {
-        position: fixed;
+        position: relative;
         top: 0;
         width: 100%;
         padding: 12px 0;
@@ -1443,22 +1472,22 @@ footer {
     }
     
     .logo {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
         min-width: auto;
         padding: 0 10px;
     }
     
     .logo-icon {
-        width: 40px;
-        height: 40px;
+        width: 65px;
+        height: 65px;
     }
     
     .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
+        position: relative;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: auto;
         background: linear-gradient(135deg, var(--primary) 0%, #1A2F3F 100%);
         flex-direction: column;
         align-items: center;
@@ -1466,10 +1495,11 @@ footer {
         padding: 40px;
         transition: 0.5s ease;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        display: none;
     }
     
     .nav-links.active {
-        left: 0;
+        display: flex;
     }
     
     .nav-links a {
@@ -1487,7 +1517,7 @@ footer {
     
     .hero {
         padding: 80px 0 100px;
-        margin-top: 70px;
+        margin-top: 0;
         overflow-x: hidden;
     }
     
@@ -1638,13 +1668,24 @@ footer {
     }
     
     .footer-logo {
-        font-size: 1.5rem;
+        font-size: 2rem;
         min-width: auto;
     }
     
     .footer-logo-icon {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .logo {
+        font-size: 2rem;
+        min-width: auto;
+        padding: 0 10px;
+    }
+    
+    .logo-icon {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -1698,6 +1739,27 @@ footer {
         padding: 14px 12px;
         font-size: 0.95rem;
     }
+    
+    .logo {
+        font-size: 2rem;
+        min-width: auto;
+        padding: 0 10px;
+    }
+    
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .footer-logo {
+        font-size: 1.8rem;
+        min-width: auto;
+    }
+    
+    .footer-logo-icon {
+        width: 55px;
+        height: 55px;
+    }
 }
 
 /* Optimized for iPhone SE/12 mini (375px) */
@@ -1749,6 +1811,27 @@ footer {
     
     .hero p {
         font-size: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+        min-width: auto;
+        padding: 0 10px;
+    }
+    
+    .logo-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .footer-logo {
+        font-size: 1.6rem;
+        min-width: auto;
+    }
+    
+    .footer-logo-icon {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -1813,6 +1896,18 @@ footer {
         max-width: 100%;
     }
     
+    .logo {
+        font-size: 1.7rem;
+        min-width: auto;
+        padding: 0 8px;
+        gap: 6px;
+    }
+    
+    .logo-icon {
+        width: 52px;
+        height: 52px;
+    }
+    
     .search-box {
         flex-direction: column;
         padding: 4px;
@@ -1828,12 +1923,13 @@ footer {
     }
     
     .footer-logo {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
+        min-width: auto;
     }
     
     .footer-logo-icon {
-        width: 35px;
-        height: 35px;
+        width: 48px;
+        height: 48px;
     }
     
     header {
@@ -1841,15 +1937,15 @@ footer {
     }
     
     .logo {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         min-width: auto;
         padding: 0 8px;
         gap: 6px;
     }
     
     .logo-icon {
-        width: 35px;
-        height: 35px;
+        width: 52px;
+        height: 52px;
     }
 }
 
@@ -1903,5 +1999,27 @@ footer {
     
     .hero p {
         font-size: 0.85rem;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+        min-width: auto;
+        padding: 0 8px;
+        gap: 6px;
+    }
+    
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .footer-logo {
+        font-size: 1.5rem;
+        min-width: auto;
+    }
+    
+    .footer-logo-icon {
+        width: 45px;
+        height: 45px;
     }
 }
